@@ -1,10 +1,20 @@
-supabase>=2.0.0
-streamlit>=1.28.0
-pandas>=2.0.0
-openpyxl>=3.1.0
-google-auth>=2.23.0
-google-auth-oauthlib>=1.1.0
-google-auth-httplib2>=0.1.1
-google-api-python-client>=2.100.0
+# --- Core ---
+streamlit==1.32.2
+pandas==2.2.3
+openpyxl==3.1.5
 
-streamlit-autorefresh>=1.0.1
+# --- Google APIs ---
+google-auth==2.23.0
+google-auth-oauthlib==1.1.0
+google-auth-httplib2==0.1.1
+google-api-python-client==2.100.0
+
+# --- Supabase (backend/database) ---
+supabase==2.0.0
+
+# --- Streamlit extras ---
+streamlit-autorefresh==1.0.1
+
+# --- Fix for segmentation fault / protobuf issue ---
+protobuf==4.25.3
+grpcio==1.59.0
