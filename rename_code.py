@@ -654,11 +654,12 @@ with col_middle:
     for i, field in enumerate(fields):
         current = parts[i] if i < len(parts) else ""
         if current.strip().lower() == field.lower():
-            val = st.text_input(f"{field} ⚠️ (needs update)", value=current, key=f"field_{i}_{st.session_state.index}")
+            val = st.text_input(f"{field} ⚠️ (needs update)", value=current, key=f"{field}_{i}_{st.session_state.index}")
             edited_parts.append(val)
         else:
-            st.text_input(f"{field}", value=current, disabled=True, key=f"field_locked_{i}_{st.session_state.index}")
-            edited_parts.append(current)
+            val = st.text_input(f"{field}", value=current, key=f"{field}_editable_{i}_{st.session_state.index}")
+            edited_parts.append(val)
+
     
     new_proposed = "_".join(edited_parts)
     st.markdown("**Preview:**")
